@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    text-align: center;
+    padding: 2rem;
+}
+
+h1 {
+    color: #fff;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 20px rgba(100, 100, 255, 0.5);
+}
+
+.mode-selector {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.mode-btn {
+    padding: 0.6rem 1.5rem;
+    border: 2px solid #6c63ff;
+    border-radius: 8px;
+    background: transparent;
+    color: #aaa;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.mode-btn.active {
+    background: #6c63ff;
+    color: #fff;
+    box-shadow: 0 0 15px rgba(108, 99, 255, 0.4);
+}
+
+.mode-btn:hover {
+    color: #fff;
+    border-color: #8b83ff;
+}
+
+.status {
+    color: #ddd;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    min-height: 1.8rem;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 8px;
+    margin: 0 auto 1.5rem;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+.cell:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: scale(1.02);
+}
+
+.cell.x {
+    color: #6c63ff;
+    text-shadow: 0 0 20px rgba(108, 99, 255, 0.6);
+}
+
+.cell.o {
+    color: #ff6584;
+    text-shadow: 0 0 20px rgba(255, 101, 132, 0.6);
+}
+
+.cell.win {
+    animation: pulse 0.6s ease infinite alternate;
+    background: rgba(108, 99, 255, 0.2);
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.08);
+    }
+}
+
+.cell.disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.reset-btn {
+    padding: 0.8rem 2.5rem;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #6c63ff, #ff6584);
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(108, 99, 255, 0.3);
+}
+
+.reset-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(108, 99, 255, 0.5);
+}
+
+.reset-btn:active {
+    transform: translateY(0);
+}
